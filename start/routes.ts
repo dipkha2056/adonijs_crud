@@ -19,7 +19,10 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
+import CategoriesController from 'App/Controllers/Http/Backend/category/CategoriesController'
 
-Route.get('/', async () => {
-  return { hello: 'world' }
-})
+
+
+Route.group(()=>{
+  Route.resource('categories', 'category/CategoriesController');
+}).namespace('App/Controllers/Http/Backend')
